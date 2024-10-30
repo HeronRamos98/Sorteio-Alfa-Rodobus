@@ -1,17 +1,33 @@
 @charset "UTF-8";
 
-body{
+body {
+    margin: 0;
+    position: relative; /* Para que o pseudo-elemento seja posicionado corretamente */
+}
+
+.container {
+    position: relative;
+    height: 100vh; /* Use 100vh para ocupar toda a altura da tela */
+    overflow: hidden; /* Para garantir que nada transborde */
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url("img/home.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    filter: blur(8px);
+    filter: blur(8px); /* Aplica o desfoque apenas à imagem de fundo */
+    z-index: 0; /* Coloca a imagem de fundo abaixo do texto */
 }
 
-h1{
+h1 {
+    position: relative;
+    color: white;
     text-align: center;
-}
-
-img{
-    
-    
+    z-index: 1; /* Garante que o texto fique acima da camada de fundo */
 }
