@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+body{
+    background-image: url("img/home.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(8px);
+}
+
+h1{
+    text-align: center;
+}
+
+img{
+    
+    
+}
