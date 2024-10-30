@@ -2,13 +2,13 @@
 
 body {
     margin: 0;
-    position: relative; /* Para que o pseudo-elemento seja posicionado corretamente */
+    position: relative; 
 }
 
 .container {
     position: relative;
-    height: 100vh; /* Use 100vh para ocupar toda a altura da tela */
-    overflow: hidden; /* Para garantir que nada transborde */
+    height: 100vh; 
+    overflow: hidden; 
 }
 
 .container::before {
@@ -22,12 +22,12 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     filter: blur(8px); /* Aplica o desfoque apenas à imagem de fundo */
-    z-index: 0; /* Coloca a imagem de fundo abaixo do texto */
+    z-index: 0; 
 }
 
 h1 {
     position: relative;
     color: white;
     text-align: center;
-    z-index: 1; /* Garante que o texto fique acima da camada de fundo */
+    z-index: 1; /* Insere o texto acima da camada de fundo */
 }
