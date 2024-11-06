@@ -6,9 +6,13 @@ body {
 }
 
 .container {
-    position: relative;
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Alinha os itens em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
     height: 100vh; 
     overflow: hidden; 
+    position: relative; /* Para o uso de elementos posicionados */
 }
 
 .container::before {
@@ -26,7 +30,7 @@ body {
 }
 
 h1 {
-    position: absolute; /* Defini como absolute para se manter no topo */
+    position: absolute; /* Mantém o h1 no topo */
     top: 20px; 
     left: 50%; 
     transform: translateX(-50%); 
@@ -35,23 +39,42 @@ h1 {
     z-index: 1; /* Insere o texto acima da camada de fundo */
 }
 
-.btn {
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    color: white;
-    background-color: rgba(0, 0, 0, 0.7); 
-    border: none; 
-    border-radius: 5px; 
-    padding: 10px 20px; 
-    font-size: 16px; 
-    cursor: pointer; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    z-index: 1; 
-    transition: background-color 0.3s; 
+a {
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative; /* Muda para relative para manter no fluxo do flexbox */
+    transition: all .35s;
 }
 
-.btn:hover {
-    background-color: rgba(0, 0, 0, 0.9); 
+a span {
+    position: relative;
+    z-index: 2;
+}
+
+a:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ff003b;
+    transition: all .35s;
+}
+
+a:hover {
+    color: #fff;
+}
+
+a:hover:after {
+    width: 100%;
 }
