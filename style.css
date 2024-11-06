@@ -21,13 +21,37 @@ body {
     background-image: url("img/home.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    filter: blur(8px); /* Aplica o desfoque apenas à imagem de fundo */
+    filter: blur(8px); 
     z-index: 0; 
 }
 
 h1 {
-    position: relative;
+    position: absolute; /* Defini como absolute para se manter no topo */
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
     color: white;
     text-align: center;
     z-index: 1; /* Insere o texto acima da camada de fundo */
+}
+
+.btn {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    z-index: 1; 
+    transition: background-color 0.3s; 
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.9); 
 }
